@@ -1,9 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
-import bodyParser from 'express'
-import userRouter from './routes/user.js'
-import recipeRouter from './routes/recipe.js'
-import cors from 'cors'
+import bodyParser from 'express';
+import userRouter from './routes/user.js';
+import recipeRouter from './routes/recipe.js';
+import cors from 'cors';
 const app = express(); 
 
 app.use(bodyParser.json())
@@ -31,4 +31,8 @@ mongoose
 
 const port = 3000;
 app.listen(port, () => console.log(`server is running on port ${port}`));
+app.get('/', (req, res) => {
+    res.send('Backend is working!');
+});
+
 
